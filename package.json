@@ -1,0 +1,28 @@
+{
+  "name": "richena-papeterie-web",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n web,cms -c auto \"npm --prefix apps/web run dev\" \"npm --prefix apps/cms run dev\"",
+    "dev:web": "npm --prefix apps/web run dev",
+    "dev:cms": "npm --prefix apps/cms run dev",
+    "build:web": "npm --prefix apps/web run build",
+    "build:cms": "npm --prefix apps/cms run build",
+    "build": "npm run build:web && npm run build:cms",
+    "lint": "npm --prefix apps/web run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richenapedro/richena-papeterie-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/richenapedro/richena-papeterie-web/issues"
+  },
+  "homepage": "https://github.com/richenapedro/richena-papeterie-web#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

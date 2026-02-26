@@ -1,30 +1,35 @@
-﻿# Richena Papeterie Web
+﻿# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
 
-Monorepo:
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-- apps/web  -> Next.js (site)
-- apps/cms  -> Sanity Studio (conteúdo)
-- infra     -> VPS/Traefik deployment
-- docs      -> documentação
-
-## Dev (local)
-- Web: cd apps/web -> 
-pm run dev
-- CMS: cd apps/cms -> 
-pm run dev
-"@ | Set-Content -Encoding UTF8 README.md
-
-@"
-node_modules
-.next
-dist
-out
+# Env files
 .env
 .env.*
-.DS_Store
-.vscode
-.idea
-*.log
+!.env.example
+
+# Node / build outputs (monorepo)
+**/node_modules/
+**/.next/
+**/dist/
+**/out/
+**/.turbo/
+**/.cache/
 
 # Sanity
-.sanity
+**/.sanity/
+**/.sanity/**
+
+# Coverage
+**/coverage/
+
+# Misc
+*.tsbuildinfo
