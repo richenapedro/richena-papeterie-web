@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Design tokens (RGB) */
+:root {
+  --bg: 250 247 245;
+  --surface: 255 255 255;
+  --text: 30 27 28;
+  --muted: 107 98 100;
+  --border: 232 224 226;
+
+  --primary: 91 15 34; /* burgundy */
+  --primary-2: 58 8 21; /* burgundy dark */
+  --accent: 214 179 106; /* gold */
+}
+
+.dark {
+  --bg: 14 10 11;
+  --surface: 22 17 19;
+  --text: 243 236 238;
+  --muted: 201 185 188;
+  --border: 42 29 32;
+
+  --primary: 106 22 48;
+  --primary-2: 138 32 65;
+  --accent: 214 179 106;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
