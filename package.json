@@ -12,7 +12,9 @@
     "build:web": "npm --prefix apps/web run build",
     "build:cms": "npm --prefix apps/cms run build",
     "build": "npm run build:web && npm run build:cms",
-    "lint": "npm --prefix apps/web run lint"
+    "lint": "npm --prefix apps/web run lint",
+    "format": "npm --prefix apps/web run format",
+    "format:check": "npm --prefix apps/web run format:check"
   },
   "repository": {
     "type": "git",
