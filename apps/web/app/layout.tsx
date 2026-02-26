@@ -2,6 +2,7 @@ import "./globals.css";
 import React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeInit } from "@/components/theme/ThemeInit";
 
 const themeInitCode = `
 (function() {
@@ -21,6 +22,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitCode }} />
       </head>
       <body className="min-h-dvh bg-[rgb(var(--bg))] text-[rgb(var(--text))]">
+        <ThemeInit />
         <Header />
         <main className="py-10">{props.children}</main>
         <Footer />

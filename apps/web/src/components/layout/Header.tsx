@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { site } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -63,7 +64,11 @@ export function Header() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            <ThemeToggle className="hidden md:inline-flex" />
+            {/* Desktop theme toggle (hidden on mobile) */}
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
+
             <div className="hidden md:block">
               <Button href="/orcamento" variant="accent">
                 Pedir orçamento
@@ -73,22 +78,23 @@ export function Header() {
             {/* Mobile button */}
             <button
               type="button"
-              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--text))]"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] text-[rgb(var(--text))] md:hidden"
               aria-label="Abrir menu"
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((v) => !v)}
             >
-              {/* ícone hambúrguer simples */}
-              <span className="block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80" />
-              <span className="block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80 mt-1.5" />
-              <span className="block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80 mt-1.5" />
+              <span className="block">
+                <span className="block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80" />
+                <span className="mt-1.5 block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80" />
+                <span className="mt-1.5 block h-0.5 w-5 bg-[rgb(var(--text))] opacity-80" />
+              </span>
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden pb-4">
+          <div className="pb-4 md:hidden">
             <div className="rounded-2xl border border-[rgb(var(--border))] bg-[rgb(var(--surface))] p-3">
               <nav className="flex flex-col">
                 {navItems
@@ -113,10 +119,11 @@ export function Header() {
                   })}
               </nav>
 
-              <div className="mt-3">
-                <div className="mt-3 flex justify-end">
+              <div className="mt-3 space-y-3">
+                <div className="flex justify-end">
                   <ThemeToggle />
                 </div>
+
                 <Button href="/orcamento" variant="accent" className="w-full">
                   Pedir orçamento
                 </Button>
