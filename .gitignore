@@ -1,0 +1,30 @@
+﻿# Richena Papeterie Web
+
+Monorepo:
+
+- apps/web  -> Next.js (site)
+- apps/cms  -> Sanity Studio (conteúdo)
+- infra     -> VPS/Traefik deployment
+- docs      -> documentação
+
+## Dev (local)
+- Web: cd apps/web -> 
+pm run dev
+- CMS: cd apps/cms -> 
+pm run dev
+"@ | Set-Content -Encoding UTF8 README.md
+
+@"
+node_modules
+.next
+dist
+out
+.env
+.env.*
+.DS_Store
+.vscode
+.idea
+*.log
+
+# Sanity
+.sanity

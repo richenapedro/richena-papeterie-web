@@ -1,0 +1,2 @@
+﻿# Placeholder - VPS compose file (we'll fill later based on your Traefik setup)
+services: {}
