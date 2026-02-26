@@ -1,6 +1,9 @@
-import {category} from '../schemas/category'
-import {product} from '../schemas/product'
-import {gallery} from '../schemas/gallery'
-import {quoteRequest} from '../schemas/quoteRequest'
+import {category} from './documents/category'
+import {product} from './documents/product'
+import {gallery} from './documents/gallery'
+import {quoteRequest} from './documents/quoteRequest'
 
-export const schemaTypes = [category, product, gallery, quoteRequest]
+import {productVariation} from './objects/productVariation'
+import {quoteItem} from './objects/quoteItem'
+
+export const schemaTypes = [category, productVariation, product, gallery, quoteItem, quoteRequest]
